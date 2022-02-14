@@ -1,0 +1,40 @@
+<div id="div">
+
+    <h1>{{titulo}}</h1>
+    <br>
+    <span class="num">Primer número</span> <input type="number" [(ngModel)]="num1">
+
+
+    <span *ngIf="num1"></span>
+
+    <span class="num">segundo número</span> <input type="number" [(ngModel)]="num2" [disabled]='toggleButton'>
+
+    <div class="inline">
+        <button (click)="sumar()" class="op">+</button>
+        <button (click)="multiplicar()" class="op">*</button>
+        <button (click)="restar()" class="op">-</button>
+        <button (click)="dividir()" class="op">/</button>
+        <button (click)="bin()" >bin</button>
+    </div>
+
+
+
+    <br>
+    <button (click)="limpia()">Limpiar memoria</button>
+    <span class="res"> Resultado <span class="block " id="sp">:{{resultado}}</span></span>
+
+    <ul class="res">
+
+        <li *ngFor="let res of historial ">
+
+            {{res}}
+
+        </li>
+    </ul>
+
+
+
+
+
+</div>
+
